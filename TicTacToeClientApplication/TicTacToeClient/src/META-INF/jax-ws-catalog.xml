@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9000/login?wsdl" uri="wsdl/localhost_9000/login.wsdl"/>
+    <system systemId="http://localhost:9000/login?xsd=1" uri="wsdl/localhost_9000/login.xsd_1.xsd"/>
+    <system systemId="http://localhost:9000/registruj?wsdl" uri="wsdl/localhost_9000/registruj.wsdl"/>
+    <system systemId="http://localhost:9000/registruj?xsd=1" uri="wsdl/localhost_9000/registruj.xsd_1.xsd"/>
+</catalog>

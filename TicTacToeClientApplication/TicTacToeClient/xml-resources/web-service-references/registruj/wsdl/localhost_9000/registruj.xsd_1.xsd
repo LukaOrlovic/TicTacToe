@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://webservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice/">
+
+<xs:element name="registruj" type="tns:registruj"></xs:element>
+
+<xs:element name="registrujResponse" type="tns:registrujResponse"></xs:element>
+
+<xs:complexType name="registruj">
+<xs:sequence>
+<xs:element name="arg0" type="tns:requestDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="requestDto">
+<xs:sequence>
+<xs:element name="igra" type="tns:igra" minOccurs="0"></xs:element>
+<xs:element name="objekat" type="tns:korisnik" minOccurs="0"></xs:element>
+<xs:element name="operacija" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="igra">
+<xs:complexContent>
+<xs:extension base="tns:generalDObject">
+<xs:sequence>
+<xs:element name="brojPoteza" type="xs:int"></xs:element>
+<xs:element name="datumOdigravanja" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="idIgre" type="xs:int"></xs:element>
+<xs:element name="idKorisnika" type="xs:int"></xs:element>
+<xs:element name="pobeda" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="generalDObject" abstract="true">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="korisnik">
+<xs:complexContent>
+<xs:extension base="tns:generalDObject">
+<xs:sequence>
+<xs:element name="datumPrijavljivanja" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="email" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="idKorisnika" type="xs:int"></xs:element>
+<xs:element name="korisnickoIme" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="sifra" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="registrujResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="responseDto">
+<xs:sequence>
+<xs:element name="done" type="xs:boolean"></xs:element>
+<xs:element name="igra" type="tns:igra" minOccurs="0"></xs:element>
+<xs:element name="objekat" type="tns:korisnik" minOccurs="0"></xs:element>
+<xs:element name="rangLista" type="tns:generalDObject" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
